@@ -58,7 +58,7 @@ def main():
     # model1 = Unet.Unet(input_channel = 3)
     model1 = Swin_unet.SwinUnet() 
     # Swin_unet.load_pretrained_encoder(model1)
-    Swin_unet.load_pretrained_encoder(model1, "swinv2_base_patch4_window12to16_192to256_22kto1k_ft.pth")
+    Swin_unet.load_pretrained_encoder(model1, "swinv2_tiny_patch4_window16_256.pth")
     optimizer1 = optimizer.optimizer(model = model1)
     trainer = Trainer(model = model1, optimizer = optimizer1)
     trainLoader, validLoader, testLoader = get_dataloaders(args.augment)

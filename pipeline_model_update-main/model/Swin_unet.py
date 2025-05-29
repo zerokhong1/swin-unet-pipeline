@@ -805,15 +805,16 @@ class SwinUnet(nn.Module):
         self.zero_head = zero_head
         # self.config = config
 
-        self.swin_unet = SwinTransformerSys(img_size=img_size,
+        
+        self.swin_unet = SwinTransformerSys(img_size=256,
                                 patch_size=4,
                                 in_chans=in_chans,
                                 num_classes=self.num_classes,
-                                embed_dim=128,
+                                embed_dim=96,
                                 # embed_dim=128,
                                 # depths=[2, 2, 6, 2],
-                                depths=[ 2, 2, 18, 2 ],
-                                num_heads=[ 4, 8, 16, 32 ],
+                                depths=[ 2, 2, 6, 2 ],
+                                num_heads=[ 3, 6, 12, 24 ],
                                 # num_heads=[4, 8, 16, 32],
                                 window_size=16,
                                 # window_size=7,
